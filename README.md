@@ -3,12 +3,14 @@
 ## Setup
 
 Add a `creds.js` file with keys and sheet. For example:
-```var sheetsId = 'YOUR GOOGLE SHEETS ID';
+```
+var sheetsId = 'YOUR GOOGLE SHEETS ID';
 var key = 'YOUR KEY'
-module.exports = { sheetsId, key } ```
+module.exports = { sheetsId, key } 
+```
 
 Also `npm install`
 
 ## Run
 
-```node app.js```
+`node app.js`
