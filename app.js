@@ -4,6 +4,8 @@ var app = express();
 var axios = require('axios');
 var creds = require('./creds')
 
+app.use(express.static('public'));
+
 var sheetsId = creds.sheetsId;
 var key = '?key=' + creds.key;
 var sheet = '/values/Sheet1!';
@@ -22,6 +24,10 @@ app.get('/googlesheets', function(req, res, next) {
     .catch(function(error) {console.log(error)})
 })
 
-app.listen(8080, function () {
-  console.log('Example app listening on port 8080!');
+app.get('/', function(req, res, next) {
+  
+})
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
 });
