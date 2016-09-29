@@ -16,7 +16,8 @@ app.get('/googlesheets', function(req, res, next) {
     + range 
     + key)
     .then(function(resp) {
-      return resp.data.values;
+      console.log(resp)
+      return resp.data;
     })
     .then(data => res.send(data))
     .catch(function(error) {console.log(error)})
