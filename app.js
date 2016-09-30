@@ -16,16 +16,12 @@ app.get('/googlesheets', function(req, res, next) {
     + sheetsId 
     + sheet 
     + range 
-    + key)
-    .then(function(resp) {
-      return resp.data.values;
+    + key
+  ).then(function(resp) {
+      return resp.data;
     })
     .then(data => res.send(data))
     .catch(function(error) {console.log(error)})
-})
-
-app.get('/', function(req, res, next) {
-  
 })
 
 app.listen(3000, function () {
