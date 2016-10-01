@@ -1,13 +1,21 @@
 {
-  "name": "heat-support",
+  "name": "sheets-db",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "Add a `creds.js` file with keys and sheet. For example:\r ```javascript\r var sheetsId = 'YOUR GOOGLE SHEETS ID';\r var key = 'YOUR KEY'\r module.exports = { sheetsId, key } \r ```",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsata/sheets-db.git"
   },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rsata/sheets-db/issues"
+  },
+  "homepage": "https://github.com/rsata/sheets-db#readme",
   "dependencies": {
     "axios": "^0.14.0",
     "express": "^4.14.0"
