@@ -10,37 +10,29 @@ $(document).ready(function() {
       for(var x=0; x<data.values[y].length; x++) {
         var val=data.values[y][x];
 
-        if(val==='') continue;
-        // check for value
-        // if (data.values[y][x-1]===undefined) {
-        //   $('#entry').append('<ul class="x_' + x + ' y_' + y + '">PARENT' + val + '</ul>');
-        // } else if(data.values[y][x+1]===undefined) {
-        //   $('#entry').append('<li class="x_' + x + ' y_' + y + '">LAST_CHILD' + val + '</li>');
-        // } else {
-        //   $('#entry').append('<li class="x_' + x + ' y_' + y + '">SUB_PARENT' + val + '</li>')
-        // }
-
-        if (data.values[y][x-1]===undefined) {
-          $('#entry').append('<li>'+ val +'<ul>' + yaya(data.values[y]) + '</ul></li>');
+        if (val!='' && data.values[y][x+1]!='' && data.values[y][x+1]!=undefined) {
+          $('#entry').append('<li>'+ val +'<ul>' + makeLi(data.values, x, y) + '</ul></li>');
         }
-
       }
     }
   });
 
 
+  function makeLi(values, x, y) {
+    var arr = []
+    var i, c;
 
+    for (i=y; i<values.length; i++) {
+      for (c=0; c<values[i].length; c++) {
+        if (values[i][c]!='' && values[i][c-1]!=undefined && values[i][c+1]===undefined)
+          arr.push('<li>' + values[i][c] + '</li>');
+        continue;
+      } 
+    }
 
-
-
-  function yaya(x) {
-    var h;
-    $.each(x, function(index, value) {
-      if(value) return h ='<li>'+ value +'</li>';
-      continue;
-    });
-    return h;
+    return arr.join(' ');
   }
 
 
 });
+

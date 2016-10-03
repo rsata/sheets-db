@@ -8,7 +8,7 @@ app.use(express.static('public'));
 
 var sheetsId = creds.sheetsId;
 var key = '?key=' + creds.key;
-var sheet = '/values/Sheet1!';
+var sheet = '/values/Sheet2!';
 var range = 'A:Z';
 
 app.get('/googlesheets', function(req, res, next) {
